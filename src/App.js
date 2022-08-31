@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Router from "./Router";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import {FancyBtn, SpiningBtn, DarkBtn} from './styled'
+import Navbar from "./components/Navbar";
 
 const theme = {
   dark: {
@@ -28,7 +29,9 @@ export default () => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <div className="App">
+        <Navbar />
         <Router />
+        <br />
         <FancyBtn>it's good</FancyBtn>
         <SpiningBtn>으아아</SpiningBtn>
         <DarkBtn>theme btn</DarkBtn>

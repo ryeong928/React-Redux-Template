@@ -1,11 +1,44 @@
+
+/*
+--react-router
+a fully-featured client and server-side routing library for React
+
+BrowserRouter : react application과 브라우저 url을 하나로 연동시키고, 하위 컴포넌트에서 라우터 기능을 사용할 수 있게 해준다
+Link : url 변경
+NavLink : 해당 url일 경우 className="active" 자동 적용
+
+nested Route : /product
+dynamic Route : /user
+
+*/
 import {Routes, Route, useLocation} from 'react-router-dom'
+import NoMatch from './components/NoMatch'
 import LoginContent from './views/login/LoginContent'
+import AboutContent from './views/about/AboutContent'
+import OrderContent from './views/order/OrderContent'
+import ProductContent from './views/product/ProductContent'
+import FeaturedContent from './views/product/FeaturedContent'
+import NewContent from './views/product/NewContent'
+import UserContent from './views/user/UserContent'
+import DetailContent from './views/user/DetailContent'
+import AdminContent from './views/user/AdminContent'
 
 export default () => {
     const location = useLocation()
     return(
         <Routes location={location}>
-            <Route path="/" element={<LoginContent />} />
+          <Route path="/" element={<LoginContent />} />
+          <Route path="/about" element={<AboutContent />} />
+          <Route path="/order" element={<OrderContent />} />
+          <Route path="/product" element={<ProductContent />}>
+            <Route index element={<FeaturedContent />} />
+            <Route path="featured" element={<FeaturedContent />} />
+            <Route path="new" element={<NewContent />} />
+          </Route>
+          <Route path="/user" element={<UserContent />} />
+          <Route path="/user/:id" element={<DetailContent />} />
+          <Route path="/user/admin" element={<AdminContent />} />
+          <Route path="*" element={<NoMatch />} />
         </Routes>
     )
 }
