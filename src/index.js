@@ -7,9 +7,12 @@ import App from './App';
 import { Provider } from 'react-redux';
 import store, { persistor } from './store'
 import { PersistGate } from 'redux-persist/integration/react';
+// context
+import { AuthProvider } from './context/auth';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <AuthProvider>
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
@@ -17,4 +20,5 @@ root.render(
       </BrowserRouter>
     </PersistGate>
   </Provider>
+  </AuthProvider>
 );

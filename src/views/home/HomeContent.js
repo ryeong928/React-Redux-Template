@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { testActions } from "../../features/testSlice";
+import { FancyBtn, SpiningBtn, DarkBtn } from '../../styled'
 
 export default () => {
     const testState = useSelector(state => state.test)
@@ -8,6 +9,7 @@ export default () => {
     useEffect(() => {
         dispatch(testActions.fetchUsersPending())
     }, [])
+
     return(
         <div>
             <section>
@@ -34,6 +36,13 @@ export default () => {
                     <ul>{testState.users.map(user => <li key={user.id}>{user.name}</li>)}</ul>
                 )}
                 {!testState.loading && testState.error && <div>{testState.error.message}</div>}
+            </section>
+            <section>
+                <br />
+                <FancyBtn>it's good</FancyBtn>
+                <SpiningBtn>으아아</SpiningBtn>
+                <DarkBtn>theme btn</DarkBtn>
+                <br/>
             </section>
         </div>
     )

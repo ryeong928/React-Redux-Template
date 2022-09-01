@@ -24,7 +24,7 @@ const testSlice = createSlice({
         incre: (state, action) => {state.count += action.payload},
         decre: (state, action) => {state.count -= action.payload},
         toggle: (state) => {state.isOkay = !state.isOkay},
-
+        // saga용 reducer
         fetchUsersPending: (state) => {
             state.loading = true
             state.users = []

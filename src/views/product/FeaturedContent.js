@@ -1,8 +1,3 @@
-
 export default () => {
-  return(
-    <div>
-      <h3>Featured</h3>
-    </div>
-  )
+  return <h3>Featured</h3>
 }

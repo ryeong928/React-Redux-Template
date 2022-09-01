@@ -30,7 +30,7 @@ export const FancyBtn = styled.button.attrs({
         background-image: linear-gradient(to right, silver 0%, gray 100%);
     }
 `
-
+// keyframes, animation
 const spin = keyframes`
     from{
         transform: rotate(0deg);
@@ -43,7 +43,7 @@ export const SpiningBtn = styled.button`
     height: 30px;
     animation: ${spin} infinite 2s linear;
 `
-
+// theme 적용
 export const DarkBtn = styled.button`
     border: 2px solid ${props => props.theme.dark.primary};
     background-color: ${props => props.theme.dark.primary};

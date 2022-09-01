@@ -5,7 +5,7 @@ export default () => {
   const navigate = useNavigate()
     return(
         <div>
-          <div>Order</div>
+          <div>Ordered!</div>
           <button onClick={() => {navigate(-1)}}>move back</button>
         </div>
     )

@@ -1,8 +1,4 @@
 
 export default () => {
-  return(
-    <div>
-      <h3>User Admin Page</h3>
-    </div>
-  )
+  return <h3>User Admin Page</h3>
 }

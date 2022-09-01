@@ -5,14 +5,21 @@
 }
 html{
   height: 100%;
+  font-family: "SUIT", sans-serif;
+  letter-spacing: -0.4px;
 }
 body{
   height: 100%;
 }
+@media only screen and (min-width: 1260px) {
+  body {
+    min-height: 700px;
+    min-width: 1260px;
+    background-color: red;
+  }
+}
 #root{
   height: 100%;
-  color: black;
-  background-color: silver;
   text-align: center;
 }
 a{
@@ -21,13 +28,10 @@ a{
 ul, li{
   list-style: none;
 }
-button{
-  padding: 5px;
-}
 nav{
   display: flex;
   justify-content: center;
   gap: 10px;
-  background-color: white;
+  background-color: silver;
   padding: 10px;
 }
