@@ -7,10 +7,9 @@ export default () => {
   const navigate = useNavigate()
   const auth = useAuth()
   const [user, setUser] = useState('')
-  const redirectionPath = location.state?.path || '/'
   const handleLogin = () => {
       auth.login(user)
-      navigate(redirectionPath, {replace: true}) // 로그인상태에서, 뒤로가기로 login 페이지가 보이지 않도록 replace true
+      navigate('/profile', {replace: true}) // 로그인상태에서, 뒤로가기로 login 페이지가 보이지 않도록 replace true
   }
   return(
     <div>

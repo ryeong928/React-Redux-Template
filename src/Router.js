@@ -27,9 +27,14 @@ import DetailContent from './views/user/DetailContent'
 import AdminContent from './views/user/AdminContent'
 import Login from './views/profile/Login'
 import ProfileContent from './views/profile/ProfileContent'
-import RequireAuth from './views/profile/RequireAuth'
+import AuthPrivateRoute from './views/profile/AuthPrivateRoute'
 // import AboutContent from './views/about/AboutContent'
 const LazyAboutContent = React.lazy(() => import('./views/about/AboutContent'))
+
+const ROLE = {
+  admin: 'admin',
+  user: 'user',
+}
 
 export default () => {
     const location = useLocation()
@@ -47,7 +52,7 @@ export default () => {
           <Route path="/user/:id" element={<DetailContent />} />
           <Route path="/user/admin" element={<AdminContent />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<RequireAuth><ProfileContent /></RequireAuth>} />
+          <Route path="/profile" element={<AuthPrivateRoute component={<h3>profile layout</h3>} roles={[ROLE.admin]}><ProfileContent /></AuthPrivateRoute>} />
           <Route path="*" element={<h2>Not Found ㅠㅅㅠ</h2>} />
         </Routes>
     )
