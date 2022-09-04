@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 import { useAuth } from "../../context/auth"
 
 export default () => {
-  const location = useLocation()
+  const navProps = useLocation().state
   const navigate = useNavigate()
   const auth = useAuth()
   const [user, setUser] = useState('')

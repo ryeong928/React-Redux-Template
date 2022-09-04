@@ -1,5 +1,5 @@
 import React from "react"
-import { Navigate, useLocation} from "react-router-dom"
+import { Navigate, useLocation, Outlet} from "react-router-dom"
 import { useAuth } from "../../context/auth"
 
 /*
@@ -13,10 +13,12 @@ export default ({children, roles}) => {
   const location = useLocation()
   const auth = useAuth()
   const userRole = roles.includes('user') ? true : false // 여기서 'user'는 user state에서 가져오면 된다
-  // 비로그인 상태면 로그인 페이지로
+
+  // 비로그인 상태면 로그인 페이지로 이동
   if(!auth.user) return <Navigate to='/login' state={{path: location.pathname}}/>
-  // 로그인 상태에서 user role이 admin일 경우
+  // 로그인 user role : admin
   else if(userRole) return <h2>it's admin page</h2>
-  // 로그인 상태에서 user role이 user일 경우
+  // 로그인 user role : user
   else return children
+  // else return <Outlet />
 }

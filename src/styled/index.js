@@ -6,13 +6,7 @@ easier deletion of CSS
 dynamic styling
 painless maintenance
 automatic vendor prefixing
-
---recommended extension
-vscode-styled-components
-
-
 */
-
 import styled, {css, keyframes} from "styled-components";
 
 // attrs(() => {}) 도 가능함
@@ -27,7 +21,7 @@ export const FancyBtn = styled.button.attrs({
     color: white;
     cursor: ${props => !props.disabled && 'pointer'};
     &:hover{
-        background-image: linear-gradient(to right, silver 0%, gray 100%);
+      background-image: linear-gradient(to right, silver 0%, gray 100%);
     }
 `
 // keyframes, animation
@@ -41,7 +35,7 @@ const spin = keyframes`
 export const SpiningBtn = styled.button`
     width: 100px;
     height: 30px;
-    animation: ${spin} infinite 2s linear;
+    animation: ${spin} infinite 3s linear;
 `
 // theme 적용
 export const DarkBtn = styled.button`

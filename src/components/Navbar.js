@@ -9,6 +9,7 @@ export default () => {
     }
   }
   const auth = useAuth()
+  
   return (
     <nav>
       <Link to="/">Home</Link>
